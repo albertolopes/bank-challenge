@@ -18,12 +18,12 @@ public class Account {
     private Long id;
 
     @Column(name = "ACCOUNT_NUMBER")
-    private Long contaNumero;
+    private Integer contaNumero;
 
     @Column(name = "BALANCE")
     private Float saldo;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "person_id")
     private Person pessoa;
 }

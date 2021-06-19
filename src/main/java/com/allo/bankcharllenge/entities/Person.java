@@ -18,11 +18,11 @@ public class Person {
     private Long id;
 
     @Column(name = "NAME")
-    private String name;
+    private String nome;
 
     @Column(name = "CPF")
     private Long cpf;
 
-    @OneToOne(mappedBy="person")
-    private Account account;
+    @OneToOne(mappedBy="pessoa")
+    private Account conta;
 }

@@ -1,5 +1,6 @@
 package com.allo.bankcharllenge.controllers;
 
+import com.allo.bankcharllenge.dtos.AccountDTO;
 import com.allo.bankcharllenge.dtos.CreateAccountDTO;
 import com.allo.bankcharllenge.services.AccountService;
 import io.swagger.annotations.Api;
@@ -16,9 +17,9 @@ public class AccountController {
 
     private final AccountService accountService;
 
-    @GetMapping
+    @PostMapping
     @ApiOperation("Create a new accout")
-    public ResponseEntity<CreateAccountDTO> createAccount(@RequestBody CreateAccountDTO dto){
+    public ResponseEntity<AccountDTO> createAccount(@RequestBody CreateAccountDTO dto){
         return ResponseEntity.ok(accountService.createAccount(dto));
     }
 
