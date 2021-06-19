@@ -11,7 +11,7 @@ public class CreateAccountDTO {
 
     private String nome;
 
-    private Long cpf;
+    private String cpf;
 
     private Float saldo;
 }

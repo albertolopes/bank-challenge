@@ -4,6 +4,7 @@ import com.allo.bankcharllenge.dtos.AccountDTO;
 import com.allo.bankcharllenge.dtos.CreateAccountDTO;
 import com.allo.bankcharllenge.entities.Account;
 import com.allo.bankcharllenge.entities.Person;
+import com.allo.bankcharllenge.exceptions.DataIntegrityException;
 import com.allo.bankcharllenge.mappers.AccountMapper;
 import com.allo.bankcharllenge.repositories.AccountRepository;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,9 @@ public class AccountService {
     private final AccountMapper accountMapper;
 
     public AccountDTO createAccount(CreateAccountDTO dto){
+
+        if(dto.getSaldo() < 50) throw new DataIntegrityException("Saldo insuficiente para abertura de nova conta.");
+
         Person person = new Person();
         person.setNome(dto.getNome());
         person.setCpf(dto.getCpf());

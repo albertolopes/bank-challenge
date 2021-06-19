@@ -11,5 +11,5 @@ public class PersonDTO {
 
     private String nome;
 
-    private Long cpf;
+    private String cpf;
 }
